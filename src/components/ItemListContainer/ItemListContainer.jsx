@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemList from '../ItemList/ItemList';
+import Box from '@mui/material/Box';
 
 const ItemListContainer = ( ) => {
 
@@ -30,12 +31,13 @@ const ItemListContainer = ( ) => {
             pictureUrl: urlProd_3
         }
     ]
-
-
     return (
-        <div>
+        <Box
+            display="flex"
+            justifyContent="center"
+            >
             <ItemList prod = {prod} />
-        </div>
+        </Box>
     )
 }
 

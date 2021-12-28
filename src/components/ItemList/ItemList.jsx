@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Item from '../Item/Item';
+import Box from '@mui/material/Box';
 
 const ItemList = ({prod}) => {
-
     const [items, setItems] = useState([])
 
     
@@ -20,11 +20,11 @@ const ItemList = ({prod}) => {
     }, [])
 
     return (
-        <div>
+        <Box sx={{ display: 'inline-flex'}}>
             {
-                items.map( (prod) =>{ return <Item prod = {prod} /> })
+                items.map( prod =>{ return <Item prod = {prod} /> })
             }
-        </div>
+        </Box>
     )
 }
 export default ItemList

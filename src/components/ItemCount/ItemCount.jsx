@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Button, Container, CardActions} from '@mui/material';
 
 const ItemCount = ( {stock, initial} ) => {
-    const [cont, setCont] = useState(initial)
+    const [cont, setCont] = useState()
 
     const handleContSum = () => {
         if(cont < stock){

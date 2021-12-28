@@ -2,9 +2,4 @@
 @import './base//settings';
 @import './base/base';
 
-//COMPONENTES
-@import '../components/navbar/navegacion';
-@import '../components/CartWidget/cardwidget';
-// @import '../components/logo/logo';
-@import '../components/ItemContainer/itemcontainer';
-@import '../components/ItemCount/itemCount';
+@import '../components/Item/item';
