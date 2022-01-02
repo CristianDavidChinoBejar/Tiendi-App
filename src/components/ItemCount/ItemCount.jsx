@@ -2,7 +2,9 @@ import {useState} from 'react';
 import {Button, Container, CardActions} from '@mui/material';
 
 const ItemCount = ( {stock, initial} ) => {
-    const [cont, setCont] = useState()
+    console.log(stock, initial);
+    
+    const [cont, setCont] = useState(initial)
 
     const handleContSum = () => {
         if(cont < stock){
@@ -24,7 +26,7 @@ const ItemCount = ( {stock, initial} ) => {
         <>
             <CardActions className='styleTeamButtons'>
                 <Button color='primary' variant='contained' className='buttonInd' onClick = { () => { handleContRes() }} > - </Button>
-                <p> {cont} </p>
+                <Button color='primary' variant='contained' className='buttonInd' onClick = { () => { handleContRes() }} > {cont} </Button>
                 <Button color='primary' variant='contained' className='buttonInd' onClick = { () => { handleContSum() }} > + </Button>
             </CardActions>
                 <Button color='primary' variant='contained' className='StyleButtonAddToCart' onClick = { () => { onAdd () } } > Agregar al carrito </Button>

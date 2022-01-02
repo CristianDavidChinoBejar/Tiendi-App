@@ -2,6 +2,7 @@
        const urlProd_1 = 'https://static.mercadonegro.pe/wp-content/uploads/2019/01/23102112/musicas_sem_copyright.png'
        const urlProd_2 = 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2020/07/razer-huntsman-mini-caja-2012177.jpg?itok=JQfAt_Sd'
        const urlProd_3 = 'https://mullbrand.com/wp-content/uploads/2019/11/bancoa-de-musica-sin-copyright.jpg'
+       const urlProd_4 = 'https://resource.logitechg.com/content/dam/gaming/en/products/g915-tkl/g915-tkl-gallery/pan-g915-tkl-white-gallery-topdown.png'
    
    const prod = [
         { 
@@ -34,7 +35,15 @@
             category: 'Teclado', 
             description: 'Modelo - Logitech', 
             price: 7800, 
-            pictureUrl: urlProd_2
+            pictureUrl: urlProd_4
         }
     ]
-    export default prod;
+
+    export const getItems = new Promise ((resolve) =>{
+        setTimeout(() => { 
+            resolve(prod)
+        }, 2000);
+    })
+    
+    
+    // export default prod;

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ItemList from '../ItemList/ItemList';
 import Box from '@mui/material/Box';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import prod from '../../mock';
+import {getItems} from '../../mock';
 
 const ItemListContainer = ( ) => {
 
@@ -10,11 +10,11 @@ const ItemListContainer = ( ) => {
     
     const [productos, setProductos] = useState([])
 
-const getItems = new Promise ((resolve, reject) =>{
-    setTimeout(() => { 
-        resolve(prod)
-    }, 2000);
-})
+// const getItems = new Promise ((resolve, reject) =>{
+//     setTimeout(() => { 
+//         resolve(prod)
+//     }, 2000);
+// })
 
 useEffect(() => {
     getItems
@@ -28,7 +28,7 @@ useEffect(() => {
             setProductos(data)
         }
     })
-}, [])
+}, [idCategory])
 
     console.log("Holu", productos);
 

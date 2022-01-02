@@ -1,26 +1,39 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import prod from '../../mock';
+import {getItems} from '../../mock';
 
 const ItemDetailContainer = () => {
-  const [details, setDetails] = useState([])
+  const [details, setDetails] = useState()
   const {id} = useParams();
-  console.log("prod:", prod);
-  
+  console.log("getItems:", getItems);
+
   useEffect(() => {
-    if(id){
-      console.log("id:", id);
-      const detailFilter = prod.filter( (items) => items.id === parseInt(id))
-      console.log("detailFilter:", detailFilter);
-      setDetails(detailFilter)
-    }
-  }, [])
+    getItems
+    .then(data =>{
+        if(id){
+            console.log("se muestra filter");
+            // console.log(typeof(id));
+            const detailFilter = data.filter( (items) =>  items.id === parseInt(id))
+            setDetails(detailFilter)
+        }else{
+            console.log("se muestra category");
+            setDetails(data)
+        }
+    })
+
+    // if(id){
+    //   console.log("id:", id);
+    //   const detailFilter = prod.filter( (items) => items.id === parseInt(id))
+    //   console.log("detailFilter:", detailFilter);
+    //   setDetails(detailFilter)
+    // }
+  }, [id])
 
   return (
     <div>
       {
-        <ItemDetail key={details.id} detalles = {details} />
+        details && <ItemDetail key={details.id} detalles = {details[0]} />
       }
        
     </div>

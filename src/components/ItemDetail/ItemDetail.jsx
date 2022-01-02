@@ -15,11 +15,11 @@ const Img = styled('img')({
 });
 
 export default function ItemDetail( {detalles} ) {
-  // console.log("uwu", detalles);
+  console.log("uwu", detalles);
   
   return (
     <Paper sx={{ p: 2, margin: 'auto', maxWidth: 500, flexGrow: 1 }}>
-      <h2> PANTALLA DE DETALLES</h2>
+      <h2> DETALLE DEL PRODUCTO </h2>
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
@@ -51,13 +51,13 @@ export default function ItemDetail( {detalles} ) {
           <Grid item>
             {
             <Typography variant="subtitle1" component="div">
-              {detalles.price}
+              Precio: $ {detalles.price}
             </Typography>
             }
           </Grid>
-          <ItemCount />
         </Grid>
       </Grid>
+          <ItemCount stock={10} initial={0}/>
     </Paper>
   );
 }
