@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 
+import ItemCount from "../ItemCount/ItemCount";
 
 const Img = styled('img')({
   margin: 'auto',
@@ -14,7 +15,7 @@ const Img = styled('img')({
 });
 
 export default function ItemDetail( {detalles} ) {
-  console.log(detalles);
+  // console.log("uwu", detalles);
   
   return (
     <Paper sx={{ p: 2, margin: 'auto', maxWidth: 500, flexGrow: 1 }}>
@@ -22,7 +23,7 @@ export default function ItemDetail( {detalles} ) {
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src={detalles.foto} />
+            <Img alt="complex" src={detalles.pictureUrl} />
           </ButtonBase>
         </Grid>
 
@@ -54,6 +55,7 @@ export default function ItemDetail( {detalles} ) {
             </Typography>
             }
           </Grid>
+          <ItemCount />
         </Grid>
       </Grid>
     </Paper>

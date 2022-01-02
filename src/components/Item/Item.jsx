@@ -17,7 +17,7 @@ import {
 
 const Item = ({ prod }) => { 
 
-  console.log(prod);
+  // console.log("uwu", prod);
 
     return (
             <Card sx={{ maxWidth: 345, ml: 5, mt: 5 }} >
@@ -43,7 +43,11 @@ const Item = ({ prod }) => {
                     <Router>
                       <Switch>
                         <Route>
-                          <Button color='primary' variant='contained'> Ver detalle del producto </Button>
+                          <Button color='primary' variant='contained'> 
+                            <a href={`/item/${prod.id}`} className='styleTextButom'>
+                              Ver detalle del producto 
+                            </a>
+                          </Button>
                         </Route>
                       </Switch>
                     </Router>

@@ -1,35 +1,26 @@
-import React, {useEffect, useState} from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import React, {useEffect, useState} from 'react';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import prod from '../../mock';
 
 const ItemDetailContainer = () => {
-  const [details, setDetails] = useState({})
+  const [details, setDetails] = useState([])
+  const {id} = useParams();
+  console.log("prod:", prod);
   
-  const productDetails = 
-      { 
-          id: 1, 
-          title: 'Teclado Gamer Luces Led Ergonomico Antideslizante', 
-          description: 'Teclado - Teclado retroiluminado (16.8 millones de colores) - Conexión USB 2.0', 
-          price: '$ 5300',
-          foto: 'https://spacegamer.com.ar/img/Public/1058-producto-teclado-mecanico-redragon-kumara-white-switch-blue5-6210.jpg'
-      };
-
-  const getItemsDetails = new Promise ((resolve) =>{
-    setTimeout(() => {
-        resolve(productDetails)
-    }, 2000);
-})
-
   useEffect(() => {
-    getItemsDetails
-    .then( res => { setDetails (res)})
+    if(id){
+      console.log("id:", id);
+      const detailFilter = prod.filter( (items) => items.id === parseInt(id))
+      console.log("detailFilter:", detailFilter);
+      setDetails(detailFilter)
+    }
   }, [])
-
-  // console.log(details);
 
   return (
     <div>
       {
-        <ItemDetail detalles = {details} />
+        <ItemDetail key={details.id} detalles = {details} />
       }
        
     </div>

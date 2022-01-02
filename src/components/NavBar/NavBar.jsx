@@ -5,6 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { CartWidget } from '../CartWidget/CartWidget';
+import Link from '@mui/material/Link';
+
 
 export default function NavBar() {
   return (
@@ -18,18 +20,35 @@ export default function NavBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            TIENDI
+          <Link href='/'>
+            <span className='optionNavBrand'>
+              TIENDI
+            </span>
+          </Link>
+
           </IconButton>
           <Typography variant="h6" component="div" sx={{ mr: 2 }}>
-            Productos
-          </Typography>
-          
-          <Typography variant="h6" component="div" sx={{ mr: 2 }}>
-            Ofertas
+            <Link href="/category/Teclado" >
+              <span className='optionsNav'>
+                Teclado
+              </span>
+            </Link>
           </Typography>
 
+          <Typography variant="h6" component="div" sx={{ mr: 2 }}>
+            <Link href='/category/Auriculares'>
+              <span className='optionsNav'>
+                Auriculares
+              </span>
+            </Link>
+            </Typography>
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Contacto
+            <Link href='/category/Kit'>
+              <span className='optionsNav'>
+                Kit
+              </span>
+            </Link>
           </Typography>
 
           <Typography variant="h6" component="div">
