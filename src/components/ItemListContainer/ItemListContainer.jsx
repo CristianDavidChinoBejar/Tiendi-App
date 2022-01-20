@@ -10,12 +10,6 @@ const ItemListContainer = ( ) => {
     
     const [productos, setProductos] = useState([])
 
-// const getItems = new Promise ((resolve, reject) =>{
-//     setTimeout(() => { 
-//         resolve(prod)
-//     }, 2000);
-// })
-
 useEffect(() => {
     getItems
     .then(data =>{
@@ -38,7 +32,6 @@ useEffect(() => {
             justifyContent="center"
             >
             <ItemList prod = {productos} />
-            {/* Poner itemCount aca */}
         </Box>
     )
 }

@@ -22,12 +22,6 @@ const ItemDetailContainer = () => {
         }
     })
 
-    // if(id){
-    //   console.log("id:", id);
-    //   const detailFilter = prod.filter( (items) => items.id === parseInt(id))
-    //   console.log("detailFilter:", detailFilter);
-    //   setDetails(detailFilter)
-    // }
   }, [id])
 
   return (
